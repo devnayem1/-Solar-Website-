@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Solar Co — Power Your Home With Smart Solar Energy</title>
+<meta name="description" content="Reduce energy bills and get a customised solar solution designed for your property. Free quote from certified solar experts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#F4A146;
+    --orange-deep:#E8862A;
+    --navy:#24364A;
+    --navy-soft:#3C5068;
+    --white:#FFFFFF;
+    --gray:#F7F8FA;
+    --orange-bg:#FFF5E8;
+    --navy-tint:#EEF3F8;
+    --ink:#1B2836;
+    --muted:#5B6B7C;
+    --line:#E7ECF1;
+    --r-lg:16px;
+    --r-md:12px;
+    --shadow:0 14px 36px rgba(36,54,74,0.09);
+    --shadow-sm:0 6px 18px rgba(36,54,74,0.07);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;color:var(--navy);margin:0;line-height:1.16;}
+  p{line-height:1.65;color:var(--muted);margin:0;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  section{padding:92px 0;}
+  .eyebrow{color:var(--orange-deep);font-weight:600;font-size:14px;margin-bottom:12px;display:block;}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:3px;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 30px;border-radius:100px;
+       font-family:'Sora',sans-serif;font-weight:600;font-size:15px;cursor:pointer;border:none;white-space:nowrap;
+       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;}
+  .btn-primary{background:var(--orange);color:var(--navy);box-shadow:0 8px 22px rgba(244,161,70,.40);}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 12px 28px rgba(244,161,70,.5);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:var(--white);}
+  .btn-light{background:var(--white);color:var(--navy);}
+  .btn-light:hover{background:var(--orange-bg);transform:translateY(-2px);}
+  .btn-sm{padding:11px 22px;font-size:13.5px;}
+  .btn-block{width:100%;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(36,54,74,.07);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--maxw);margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:var(--navy);}
+  .logo svg{height:30px;width:30px;}
+  .navlinks{display:flex;align-items:center;gap:34px;}
+  .navlinks a{font-weight:600;font-size:14.5px;color:var(--navy-soft);}
+  .navlinks a:hover{color:var(--orange-deep);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-phone{font-weight:600;font-size:14.5px;color:var(--navy);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
+
+  /* HERO */
+  .hero{position:relative;padding:0;min-height:640px;display:flex;align-items:center;}
+  .hero-bg{position:absolute;inset:0;overflow:hidden;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(-5deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.92) 38%, rgba(255,255,255,.55) 58%, rgba(255,255,255,.18) 100%);}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:72px 0;}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
+  .hero h1{font-size:48px;letter-spacing:-.015em;margin-bottom:20px;}
+  .hero .sub{font-size:17.5px;max-width:470px;margin-bottom:32px;color:var(--navy-soft);}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-stats{display:flex;gap:38px;flex-wrap:wrap;}
+  .hero-stat b{font-family:'Sora',sans-serif;font-size:24px;color:var(--navy);display:block;}
+  .hero-stat span{font-size:13px;color:var(--muted);}
+
+  .lead-card{background:var(--white);border-radius:20px;box-shadow:var(--shadow);padding:32px;border:1px solid rgba(36,54,74,.06);}
+  .lead-card h3{font-size:20px;margin-bottom:6px;}
+  .lead-card .note{font-size:14px;margin-bottom:20px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .field input,.field select{width:100%;padding:13px 14px;border-radius:var(--r-md);border:1.5px solid var(--line);
+    font-family:'Inter',sans-serif;font-size:14.5px;background:var(--gray);color:var(--ink);transition:border-color .15s,background .15s;}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--orange);background:var(--white);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+  /* TRUST BAR */
+  .trust-bar{background:var(--navy);padding:32px 0;}
+  .trust-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px;}
+  .trust-item{color:var(--white);}
+  .trust-item b{font-family:'Sora',sans-serif;font-weight:700;font-size:15.5px;display:block;}
+  .trust-item span{display:block;font-size:12.5px;color:#B7C3D0;}
+  .stars{color:var(--orange);font-size:17px;letter-spacing:2px;}
+
+  .section-head{max-width:620px;margin-bottom:50px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:35px;letter-spacing:-.012em;}
+  .section-head p{margin-top:14px;font-size:16.5px;}
+
+  /* PHOTO CARDS */
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .photo-card{border-radius:var(--r-lg);overflow:hidden;background:var(--white);border:1px solid var(--line);
+    display:flex;flex-direction:column;height:100%;transition:transform .2s, box-shadow .2s;}
+  .photo-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);}
+  .photo-card .ph{aspect-ratio:4/3;overflow:hidden;}
+  .photo-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .photo-card:hover .ph img{transform:scale(1.04);}
+  .photo-card .body{padding:22px 22px 26px;display:flex;flex-direction:column;flex-grow:1;}
+  .photo-card h4{font-size:17px;margin-bottom:8px;}
+  .photo-card p{font-size:14.5px;margin-bottom:18px;flex-grow:1;}
+
+  /* WHY US — split photo + list */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .split-photo{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);}
+  .split-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;}
+  .feature-item h4{font-size:16px;margin-bottom:5px;}
+  .feature-item p{font-size:14px;}
+  .feature-item{padding-left:16px;border-left:2px solid var(--orange);}
+
+  /* PROJECT STRIP */
+  .proj-strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;}
+  .proj-strip figure{margin:0;border-radius:var(--r-lg);overflow:hidden;position:relative;}
+  .proj-strip img{width:100%;height:100%;object-fit:cover;min-height:220px;}
+  .proj-strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px;color:#fff;font-size:13.5px;font-weight:600;
+    background:linear-gradient(transparent, rgba(27,40,54,.78));}
+  .proj-strip .tall img{min-height:460px;}
+
+  /* HOW IT WORKS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .step{position:relative;}
+  .step .ph{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;margin-bottom:18px;}
+  .step .ph img{width:100%;height:100%;object-fit:cover;}
+  .step .num{position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:50%;background:var(--orange);
+    color:var(--navy);font-family:'Sora',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:2;}
+  .step h4{font-size:16.5px;margin-bottom:7px;}
+  .step p{font-size:14px;}
+
+  /* CALCULATOR */
+  .calc-panel{background:var(--navy-tint);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;}
+  .calc-photo img{width:100%;height:100%;object-fit:cover;min-height:100%;}
+  .calc-body{padding:52px;}
+  .calc-body label{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:10px;}
+  .slider-value{font-family:'Sora',sans-serif;font-size:40px;font-weight:700;color:var(--orange-deep);margin-bottom:18px;}
+  input[type="range"]{width:100%;height:6px;border-radius:4px;background:#D7E0EA;appearance:none;-webkit-appearance:none;outline:none;}
+  input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--orange);cursor:pointer;box-shadow:0 3px 8px rgba(36,54,74,.25);}
+  input[type="range"]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--orange);cursor:pointer;border:none;}
+  .calc-results{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
+  .result-box{background:var(--white);border-radius:var(--r-md);padding:18px;border:1px solid var(--line);}
+  .result-box.full{grid-column:1/3;}
+  .result-box span{font-size:12.5px;color:var(--muted);display:block;margin-bottom:6px;}
+  .result-box b{font-family:'Sora',sans-serif;font-size:23px;color:var(--navy);}
+  .calc-note{font-size:12.5px;margin-top:16px;}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;}
+  .testi-card .ph{aspect-ratio:16/10;overflow:hidden;}
+  .testi-card .ph img{width:100%;height:100%;object-fit:cover;}
+  .testi-card .body{padding:24px;background:var(--orange-bg);flex-grow:1;}
+  .testi-card p{font-size:14.5px;color:var(--navy-soft);margin:12px 0 18px;}
+  .testi-name{font-weight:700;font-size:14.5px;color:var(--navy);}
+  .testi-loc{font-size:12.5px;color:var(--muted);}
+
+  /* FAQ */
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 0;display:flex;justify-content:space-between;
+    align-items:center;gap:20px;cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:16px;color:var(--navy);}
+  .plus{width:22px;height:22px;position:relative;flex-shrink:0;}
+  .plus::before,.plus::after{content:"";position:absolute;background:var(--orange-deep);border-radius:2px;transition:transform .25s;}
+  .plus::before{width:16px;height:2px;top:10px;left:3px;}
+  .plus::after{width:2px;height:16px;top:3px;left:10px;}
+  .faq-item.open .plus::after{transform:rotate(90deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{padding-bottom:22px;font-size:14.5px;}
+
+  /* FINAL CTA */
+  .final-cta{position:relative;border-radius:26px;overflow:hidden;}
+  .final-cta img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .final-cta .veil{position:absolute;inset:0;background:linear-gradient(100deg, rgba(244,161,70,.96) 0%, rgba(244,161,70,.88) 48%, rgba(244,161,70,.35) 100%);}
+  .final-cta .content{position:relative;z-index:2;padding:74px 60px;max-width:620px;}
+  .final-cta h2{font-size:35px;margin-bottom:14px;}
+  .final-cta p{color:rgba(36,54,74,.78);font-size:16.5px;margin-bottom:30px;}
+
+  footer{background:var(--navy);color:#B7C3D0;padding:64px 0 26px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:46px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;color:var(--white);font-family:'Sora',sans-serif;font-weight:700;font-size:18px;margin-bottom:14px;}
+  .footer-col h5{color:var(--white);font-family:'Sora',sans-serif;font-size:14.5px;margin:0 0 16px;}
+  .footer-col a{display:block;font-size:14px;color:#AEBBC9;margin-bottom:10px;}
+  .footer-col a:hover{color:var(--orange);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:10px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease, transform .55s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;} .reveal{opacity:1;transform:none;}}
+
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .hero-bg::after{background:linear-gradient(180deg, rgba(255,255,255,.90) 0%, rgba(255,255,255,.96) 45%);}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;gap:36px;}
+    .split-photo img{aspect-ratio:16/10;}
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .calc-panel{grid-template-columns:1fr;}
+    .calc-photo img{min-height:280px;}
+    .calc-body{padding:36px;}
+    .testi-grid{grid-template-columns:1fr;}
+    .proj-strip{grid-template-columns:1fr 1fr;}
+    .proj-strip .tall{grid-column:1/3;}
+    .proj-strip .tall img{min-height:300px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .final-cta .content{padding:52px 36px;}
+  }
+  @media (max-width:720px){
+    section{padding:62px 0;}
+    .wrap{padding:0 20px;}
+    .navlinks,.nav-phone{display:none;}
+    .menu-toggle{display:block;}
+    .navlinks.open{display:flex;position:absolute;top:62px;left:0;right:0;background:#fff;flex-direction:column;
+      align-items:flex-start;padding:20px;gap:18px;box-shadow:0 12px 24px rgba(0,0,0,.08);}
+    .hero h1{font-size:33px;}
+    .hero-stats{gap:24px;}
+    .grid-4,.steps,.feature-grid{grid-template-columns:1fr;}
+    .proj-strip{grid-template-columns:1fr;}
+    .proj-strip .tall{grid-column:auto;}
+    .section-head h2,.final-cta h2{font-size:26px;}
+    .calc-results{grid-template-columns:1fr;}
+    .result-box.full{grid-column:auto;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+    .lead-card{padding:24px;}
+    .field-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <img style=" height: 100px;" src="img/logo.png">
+     
+    </a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#why">Why Solar</a>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0800 765 271</span>
+      <a href="#quote" class="btn btn-primary btn-sm">Get Free Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section id="top" class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/flagged/photo-1566838616631-f2618f74a6a2?auto=format&fit=crop&w=2000&q=80" alt="Brick family home with a full rooftop solar array in bright daylight">
+  </div>
+  <div class="hero-inner">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Residential &amp; commercial solar</span>
+        <h1>Power Your Home With Smart Solar Energy</h1>
+        <p class="sub">Reduce energy bills, increase energy independence, and get a customised solar solution designed for your property — from first consultation to switch-on.</p>
+        <div class="hero-ctas">
+          <a href="#quote" class="btn btn-primary">Get Free Quote</a>
+          <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>25+ yrs</b><span>Industry experience</span></div>
+          <div class="hero-stat"><b>500+</b><span>Installations completed</span></div>
+          <div class="hero-stat"><b>25-yr</b><span>Product warranty</span></div>
+        </div>
+      </div>
+
+      <div id="quote" class="lead-card">
+        <h3>Get My Free Quote</h3>
+        <p class="note">Tell us about your property. A solar consultant replies within one business day.</p>
+        <form id="quoteForm">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" placeholder="Jane Smith" required></div>
+          <div class="field-row">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="jane@email.com" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="0800 000 000" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-type">Property type</label>
+              <select id="f-type"><option>Residential</option><option>Commercial</option><option>Rural / lifestyle block</option></select></div>
+            <div class="field"><label for="f-bill">Monthly bill</label>
+              <select id="f-bill"><option>Under $150</option><option>$150–$300</option><option>$300–$500</option><option>Over $500</option></select></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Get My Free Quote</button>
+          <p id="formMsg" style="display:none;text-align:center;margin-top:12px;font-size:13.5px;color:#E8862A;font-weight:600;">Sent. A consultant will call you within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap trust-row">
+    <div class="trust-item"><span class="stars">★★★★★</span><span>Rated by 400+ customers</span></div>
+    <div class="trust-item"><b>25+ Years</b><span>Experience</span></div>
+    <div class="trust-item"><b>500+</b><span>Installations</span></div>
+    <div class="trust-item"><b>25-Year</b><span>Product warranty</span></div>
+    <div class="trust-item"><b>Certified</b><span>Solar experts</span></div>
+    <div class="trust-item"><b>Fast</b><span>Installation</span></div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Why go solar</span>
+      <h2>A smarter way to power your property</h2>
+      <p>Four reasons homeowners make the switch — and keep saving for decades afterwards.</p>
+    </div>
+    <div class="grid-4">
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1655300256335-beef51a914fe?auto=format&fit=crop&w=800&q=80" alt="Modern home with rooftop solar panels generating power"></div>
+        <div class="body"><h4>Lower energy bills</h4><p>Generate your own electricity during the day and buy far less from the grid.</p></div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1721620845374-1cef4ceae9cf?auto=format&fit=crop&w=800&q=80" alt="Solar panels on a roof under a bright sky"></div>
+        <div class="body"><h4>Energy independence</h4><p>Rely less on the grid and stay in control when power prices rise.</p></div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1583345237708-add35a664d77?auto=format&fit=crop&w=800&q=80" alt="Residential house fitted with solar panels"></div>
+        <div class="body"><h4>Cleaner energy</h4><p>Cut household carbon emissions with a renewable source you own outright.</p></div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1730807908064-c087959dd52c?auto=format&fit=crop&w=800&q=80" alt="Home roof covered in a large solar array"></div>
+        <div class="body"><h4>Long-term savings</h4><p>Most systems pay for themselves within a few years, then keep earning.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="choose-us" style="background:var(--gray);">
+  <div class="wrap split">
+    <div class="split-photo reveal">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=1000&q=80" alt="Installer fitting a solar panel on a shingled roof under blue sky">
+    </div>
+    <div>
+      <div class="section-head" style="margin-bottom:34px;">
+        <span class="eyebrow">Why The Solar Co</span>
+        <h2>Handled end to end by our own team</h2>
+        <p>No subcontracting, no guesswork — the people who design your system are the people who install it.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-item"><h4>Expert consultation</h4><p>One-to-one guidance based on your roof, usage and goals.</p></div>
+        <div class="feature-item"><h4>Tailored solutions</h4><p>Systems sized specifically for your property, not a package deal.</p></div>
+        <div class="feature-item"><h4>Premium equipment</h4><p>Top-tier panels, inverters and batteries with real warranties.</p></div>
+        <div class="feature-item"><h4>Dedicated support</h4><p>A direct line to our team long after installation day.</p></div>
+        <div class="feature-item"><h4>Warranty protection</h4><p>Cover across panels, inverters and workmanship.</p></div>
+        <div class="feature-item"><h4>Transparent pricing</h4><p>Clear, itemised quotes with no hidden costs.</p></div>
+      </div>
+      <div style="margin-top:34px;"><a href="#quote" class="btn btn-primary">Book Consultation</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Recent work</span>
+      <h2>Real installations, real rooftops</h2>
+      <p>A snapshot of systems our team has designed, installed and commissioned.</p>
+    </div>
+    <div class="proj-strip">
+      <figure class="tall reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1745187946672-2c1d8cf26a2b?auto=format&fit=crop&w=1200&q=80" alt="Solar panels installed across a residential rooftop">
+        <figcaption>8.2 kW residential array — completed in two days</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1660330589243-4c640d878052?auto=format&fit=crop&w=800&q=80" alt="Installation team working together on a roof">
+        <figcaption>In-house install team on site</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1707247111552-aaf74241058b?auto=format&fit=crop&w=800&q=80" alt="Large commercial rooftop covered in solar panels">
+        <figcaption>Commercial rooftop, 140 panels</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1694327671725-e2a81cda3436?auto=format&fit=crop&w=800&q=80" alt="Neat rows of solar panels on a tiled roof">
+        <figcaption>Panel layout designed around shading</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1668097613572-40b7c11c8727?auto=format&fit=crop&w=800&q=80" alt="Technician servicing a solar panel">
+        <figcaption>Annual service and performance check</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Services</span>
+      <h2>Solar solutions for every property</h2>
+      <p>Four core services, all delivered by the same certified team.</p>
+    </div>
+    <div class="grid-4">
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?auto=format&fit=crop&w=800&q=80" alt="Family home with a rooftop solar installation"></div>
+        <div class="body">
+          <h4>Residential solar</h4>
+          <p>Custom systems that fit your roof, your household's usage and your budget.</p>
+          <a href="#quote" class="btn btn-outline btn-sm" style="align-self:flex-start;">Get Quote</a>
+        </div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1707247111552-aaf74241058b?auto=format&fit=crop&w=800&q=80" alt="Commercial building roof filled with solar panels"></div>
+        <div class="body">
+          <h4>Commercial solar</h4>
+          <p>Large-scale installations engineered to cut operating costs at scale.</p>
+          <a href="#quote" class="btn btn-outline btn-sm" style="align-self:flex-start;">Get Quote</a>
+        </div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617269778723-73a40cf299bd?auto=format&fit=crop&w=800&q=80" alt="Solar array feeding a home energy storage system"></div>
+        <div class="body">
+          <h4>Battery storage</h4>
+          <p>Store the day's excess energy and stay powered after the sun goes down.</p>
+          <a href="#quote" class="btn btn-outline btn-sm" style="align-self:flex-start;">Get Quote</a>
+        </div>
+      </article>
+      <article class="photo-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?auto=format&fit=crop&w=800&q=80" alt="Safety helmet resting on a solar panel during servicing"></div>
+        <div class="body">
+          <h4>Solar maintenance</h4>
+          <p>Scheduled servicing and monitoring that keeps output at its peak.</p>
+          <a href="#quote" class="btn btn-outline btn-sm" style="align-self:flex-start;">Get Quote</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">How it works</span>
+      <h2>From first call to switch-on</h2>
+      <p>Four steps, and we handle the paperwork at every one of them.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1719559519300-e9d2c2bf6de1?auto=format&fit=crop&w=800&q=80" alt="Consultant holding a solar panel outside a home"></div>
+        <h4>Free consultation</h4><p>We learn about your property, your bills and what you want solar to do.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1694327671725-e2a81cda3436?auto=format&fit=crop&w=800&q=80" alt="Panel layout mapped across a roof"></div>
+        <h4>System design</h4><p>A layout sized for your roof, its orientation and any shading.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1660330589257-813305a4a383?auto=format&fit=crop&w=800&q=80" alt="Installer working on a rooftop solar system"></div>
+        <h4>Professional installation</h4><p>Our certified team installs and commissions it, usually in one to two days.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">4</div>
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/flagged/photo-1566838803980-56bfa5300e8c?auto=format&fit=crop&w=800&q=80" alt="Completed home solar installation seen from the street"></div>
+        <h4>Start saving</h4><p>Your system goes live, and you watch the next bill drop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="calc-panel">
+      <div class="calc-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1637417494521-78b4d1d33029?auto=format&fit=crop&w=1000&q=80" alt="House with solar panels on the roof in daylight">
+      </div>
+      <div class="calc-body">
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="eyebrow">Savings calculator</span>
+          <h2 style="font-size:29px;">See what solar could save you</h2>
+        </div>
+        <label for="billSlider">Average monthly electricity bill</label>
+        <div class="slider-value">$<span id="billValue">300</span></div>
+        <input type="range" id="billSlider" min="50" max="800" step="10" value="300">
+        <div class="calc-results">
+          <div class="result-box"><span>Estimated monthly saving</span><b id="monthlySavings">$240</b></div>
+          <div class="result-box"><span>Estimated annual saving</span><b id="annualSavings">$2,880</b></div>
+          <div class="result-box full"><span>Estimated payback period</span><b id="roiYears">~5.2 years</b></div>
+        </div>
+        <p class="calc-note">Indicative only. Your consultant confirms real figures against your power bill and roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What our customers say</h2>
+      <p>Shown with the installations they're talking about.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/flagged/photo-1566838616838-c3a720672aad?auto=format&fit=crop&w=800&q=80" alt="Completed rooftop solar installation on a suburban home"></div>
+        <div class="body">
+          <span class="stars">★★★★★</span>
+          <p>"Our power bill dropped by more than half in the first month. The team made the whole thing painless."</p>
+          <div class="testi-name">Jordan Mitchell</div><div class="testi-loc">6.6 kW system · Hamilton</div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1630608354129-6a7704150401?auto=format&fit=crop&w=800&q=80" alt="Timber home with solar panels fitted to the roof"></div>
+        <div class="body">
+          <span class="stars">★★★★★</span>
+          <p>"Professional from quote to install. They explained every option and never pushed us to overspend."</p>
+          <div class="testi-name">Sara Patel</div><div class="testi-loc">8.2 kW system · Tauranga</div>
+        </div>
+      </article>
+      <article class="testi-card reveal">
+        <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1655300283246-1ef0317a565d?auto=format&fit=crop&w=800&q=80" alt="Home with a solar array and battery system installed"></div>
+        <div class="body">
+          <span class="stars">★★★★★</span>
+          <p>"Added a battery a year later and the support team made it seamless. No complaints at all."</p>
+          <div class="testi-name">David Lopez</div><div class="testi-loc">6.3 kW + battery · Christchurch</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How much can I save? <span class="plus"></span></button>
+        <div class="faq-a"><p>Most homeowners save between 40% and 80% of their electricity bill, depending on system size, roof orientation and how much power you use during daylight hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does installation take? <span class="plus"></span></button>
+        <div class="faq-a"><p>A typical residential install takes one to two days on site, once the system design and any consents are finalised.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need batteries? <span class="plus"></span></button>
+        <div class="faq-a"><p>Not necessarily. Panels alone cut your bill significantly. A battery adds backup power and lets you use your own solar after dark, which suits households that are out during the day.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What warranties are included? <span class="plus"></span></button>
+        <div class="faq-a"><p>Up to 25 years on panels, plus separate inverter, battery and workmanship warranties. Full terms are itemised in your written quote.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="final-cta">
+  <div class="wrap">
+    <div class="final-cta">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1583345237708-add35a664d77?auto=format&fit=crop&w=1800&q=80" alt="Sunlit home with a complete rooftop solar system">
+      <div class="veil"></div>
+      <div class="content">
+        <h2>Ready to switch to solar?</h2>
+        <p>Get your personalised solar quote today — no obligation, no pressure.</p>
+        <a href="#quote" class="btn btn-light">Get Free Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img style=" height: 100px; " src="img/logo.png">
+        </div>
+        <p style="max-width:270px;">Helping homes and businesses switch to clean, affordable solar energy.</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5><a href="#choose-us">About us</a><a href="#projects">Our work</a><a href="#testimonials">Testimonials</a></div>
+      <div class="footer-col"><h5>Services</h5><a href="#services">Residential solar</a><a href="#services">Commercial solar</a><a href="#services">Battery storage</a><a href="#services">Maintenance</a></div>
+      <div class="footer-col"><h5>Contact</h5><a href="tel:0800765271">0800 765 271</a><a href="mailto:hello@thesolarco.com">hello@thesolarco.com</a><a href="#quote">Get free quote</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 The Solar Co. All Rights Reserved || Designed By <a style="color: #E8862A;" href="https://www.linkedin.com/in/dev-nayem/">Developer Nayem.</a></span><span>Privacy policy · Terms of service</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; q.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  var slider = document.getElementById('billSlider');
+  function updateCalc(){
+    var bill = parseInt(slider.value,10);
+    var monthly = Math.round(bill*0.8), annual = monthly*12, years = (bill*45/annual).toFixed(1);
+    document.getElementById('billValue').textContent = bill;
+    document.getElementById('monthlySavings').textContent = '$'+monthly.toLocaleString();
+    document.getElementById('annualSavings').textContent = '$'+annual.toLocaleString();
+    document.getElementById('roiYears').textContent = '~'+years+' years';
+  }
+  slider.addEventListener('input', updateCalc); updateCalc();
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formMsg').style.display = 'block';
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var toggle = document.getElementById('menuToggle'), links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){ if(e.target.tagName === 'A'){ links.classList.remove('open'); } });
+</script>
+
+</body>
+</html>
